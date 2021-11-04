@@ -7,9 +7,10 @@ const rub = 70.95;
 
 let result = null;
 do {
-   let firstCurrencyInput = prompt('Выберите из списка название валюты которую хотите перевести и введите его в поле ниже: \n USD \n EUR \n GBP \n UAH \n RUB \n(в любом регистре)', '').trim().toUpperCase();
+   let firstCurrencyInput = null;
    let firstCurrency = null;
       do {
+         firstCurrencyInput = prompt('Выберите из списка название валюты которую хотите перевести и введите его в поле ниже: \n USD \n EUR \n GBP \n UAH \n RUB \n(в любом регистре)', '').trim().toUpperCase();
          if (firstCurrencyInput === 'USD') {
             firstCurrency = usd;
          } else if (firstCurrencyInput === 'EUR') {
@@ -22,26 +23,26 @@ do {
             firstCurrency = rub;
          } else {
             alert('Неверное значение!');
-            firstCurrencyInput = prompt('Выберите из списка название валюты которую хотите перевести и введите его в поле ниже: \n USD \n EUR \n GBP \n UAH \n RUB \n(в любом регистре)', '').trim().toUpperCase();
          }
       } while (!firstCurrency);
       
 
-   let firstAmountInput = parseFloat(prompt(`Введите сумму ${firstCurrencyInput}, которую хотите перевести`, ''));
+   let firstAmountInput = null;
    let firstAmount = null;
       do {
+         firstAmountInput = parseFloat(prompt(`Введите сумму ${firstCurrencyInput}, которую хотите перевести`, ''));   
          if (isFinite(firstAmountInput)) {
             firstAmount = parseFloat(firstAmountInput.toFixed(2));
          } else {
             alert('Неверное значение!');
-            firstAmountInput = parseFloat(prompt(`Введите сумму ${firstCurrencyInput}, которую хотите перевести`, ''));   
          }
       } while (!firstAmount);
       
 
-   let secondCurrencyInput = prompt(`Выберите из списка название валюты в которую хотите перевести ${firstAmount} ${firstCurrencyInput} и введите его в поле ниже: \n USD \n EUR \n GBR \n UAH \n RUB \n(в любом регистре)`, '').trim().toUpperCase();
+   let secondCurrencyInput = null;
    let secondCurrency = null;
    do {
+      secondCurrencyInput = prompt('Выберите из списка название валюты которую хотите перевести и введите его в поле ниже: \n USD \n EUR \n GBP \n UAH \n RUB \n(в любом регистре)', '').trim().toUpperCase();   
       if (secondCurrencyInput === 'USD') {
          secondCurrency = usd;
       } else if (secondCurrencyInput === 'EUR') {
@@ -54,7 +55,6 @@ do {
          secondCurrency = rub;
       } else {
          alert('Неверное значение!');
-         secondCurrencyInput = prompt('Выберите из списка название валюты которую хотите перевести и введите его в поле ниже: \n USD \n EUR \n GBP \n UAH \n RUB \n(в любом регистре)', '').trim().toUpperCase();   
       }
    } while (!secondCurrency);
 
