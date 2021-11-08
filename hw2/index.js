@@ -27,7 +27,7 @@ let res = null;
 do {
    let firstNumber = null;
    do {
-      firstNumber = parseInt(prompt("Введите первый целочисленный член искомой последовательности Фибоначи",""), 10);
+      firstNumber = parseInt(prompt("Введите первый целочисленный член искомой последовательности Фибоначчи",""), 10);
       if (!isFinite(firstNumber)) {
          alert("Вы ввели неверное значение!");
       }
@@ -35,7 +35,7 @@ do {
 
    let secondNumber = null;
    do {
-      secondNumber = parseInt(prompt("Введите второй целочисленный член искомой последовательности Фибоначи",""), 10);
+      secondNumber = parseInt(prompt("Введите второй целочисленный член искомой последовательности Фибоначчи",""), 10);
       if (!isFinite(secondNumber)) {
          alert("Вы ввели неверное значение!");
       }
@@ -43,14 +43,14 @@ do {
 
    let indexNumber = null;
    do {
-      indexNumber = parseInt(prompt("Введите целочисленный порядковый номер искомого числа в последовательности Фибоначи",""), 10);
+      indexNumber = parseInt(prompt("Введите целочисленный порядковый номер искомого числа в последовательности Фибоначчи",""), 10);
       if (!isFinite(indexNumber)) {
          alert("Вы ввели неверное значение!");
       }
    } while (!isFinite(indexNumber));
 
    let fibNumber = countFibonacciNumber(firstNumber, secondNumber, indexNumber);
-   alert(`В последовательности Фибоначи начинающейся с ${firstNumber} и ${secondNumber}, число с номером ${indexNumber}: \n${fibNumber}`);
+   alert(`В последовательности Фибоначчи начинающейся с ${firstNumber} и ${secondNumber}, число с номером ${indexNumber}: \n${fibNumber}`);
    res = confirm('Рассчитать еще одно число?');
 } while (res);
 
