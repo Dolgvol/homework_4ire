@@ -97,30 +97,22 @@ function clearHandler() {
 }
 
 
-function memAddHandler() {
+function memHandler(remove=false) {
    state.memoryLabel = true;
    if (state.screenContent) {
       state.makeAction();
    }
    state.screenContent = state.currResult;
-   state.memory += state.currResult;
+   if (remove) {
+      state.memory -= state.currResult;
+   } else {
+      state.memory += state.currResult;
+   }   
    renderState();
    state.screenContent = '';
    state.currResult = 0;
    state.action = null;
-}
-
-function memRemHandler() {
-   state.memoryLabel = true;
-   if (state.screenContent) {
-      state.makeAction();
-   }
-   state.screenContent = state.currResult;
-   state.memory -= state.currResult;
-   renderState();
-   state.screenContent = '';
-   state.currResult = 0;
-   state.action = null;
+   state.memoryClean = false; 
 }
 
 function mrcHandler() {
@@ -160,11 +152,11 @@ for(const button of buttons) {
       }
 
       if (btnValue.match(/m\+/)) {
-         memAddHandler();
+         memHandler();
       }
 
       if (btnValue.match(/m-/)) {
-         memRemHandler();
+         memHandler(true);
       }
 
       if (btnValue.match(/mrc/)) {
@@ -197,11 +189,11 @@ document.addEventListener('keyup', (event) => {
    }
 
    if (keyValue.match(/Home/)) {
-      memAddHandler();
+      memHandler();
    }
 
    if (keyValue.match(/End/)) {
-      memRemHandler();
+      memHandler(true);
    }
 
    if (keyValue.match(/Insert/)) {
