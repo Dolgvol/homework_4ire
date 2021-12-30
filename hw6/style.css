@@ -1,0 +1,122 @@
+
+h6, h5, h4, h3, h2, h1, p, ul, li, blockquote {
+   margin: 0;
+}
+ul, li {
+   padding: 0;
+}
+ul, ol {
+   list-style: none;
+}
+
+.wrapper {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.card-link {
+   cursor: pointer;
+   margin: 10px;
+   position: relative;
+}
+
+   .card-link .popuptext {
+      display: none;
+      visibility: hidden;
+      width: 200px;
+      background-color: #555;
+      color: #fff;
+      border-radius: 6px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+   }
+
+   .card-link .left {
+      left: 100%;
+      margin-left: -10px;
+   }
+
+   .card-link .right {
+      right: 100%;
+      margin-right: -10px;
+   }
+
+   .card-link .show {
+      display: block;
+      visibility: visible;
+   }
+
+      .card-link .popuptext .popup-desc {
+         font-size: 16px;
+      }
+
+      .card-link .popuptext .popup-slogan {
+         margin: 10px 5px;
+         font-size: 14px;
+      }
+
+      .card-link .popuptext .popup-countries {
+         margin: 5px 0;
+         font-size: 14px;
+      }
+
+      .card-link .popuptext .popup-agelim {
+         margin: 5px 0;
+         font-size: 14px;
+      }
+
+      .card-link .popuptext .popup-ratings ul{
+         padding: 2.5px 0 0 5px;
+         font-size: 14px;
+      }
+
+   .card-link .card {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      border: 1px solid #999;
+      padding: 10px;
+      background: #eee;
+      width: 200px;  
+      height: 425px;
+   }
+
+      .card-link .card .card-img {
+         overflow: hidden;
+      }
+
+      .card-link .card .card-img img {
+         display: block;
+         width: 100%;
+         transition: 0.5s ease-out;
+      }
+
+      .card-link .card:hover .card-img img {
+         transform: scale(1.1);
+      }
+
+      .card-link .card .card-header {
+         padding: 10px 0;
+         font-size: 20px;
+         font-weight: 600;
+      }
+
+      .card-link .card .card-genre {
+         font-size: 12px;
+         font-weight: 600;
+      }
+
+      .card-link .card .card-year {
+         font-size: 12px;
+         font-weight: 600;
+      }
+
+      .card-link .card .card-text {
+         padding: 10px 0 0;
+         font-size: 16px;
+         font-weight: 400;
+         flex: 0 1 30%;
+         overflow: auto;
+      }

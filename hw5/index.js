@@ -39,7 +39,7 @@ let state = {
          default:
             this.currResult = changedScreenContent;    
             break            
-     }
+      }
    },
 
    clearState() {
